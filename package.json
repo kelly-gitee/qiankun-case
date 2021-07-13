@@ -7,7 +7,7 @@
     "install:hash": "cd app-vue-hash && npm install",
     "install:history": "cd app-vue-history && npm install",
     "install:main": "cd main && npm install",
-    "install-all": "npm-run-all install:*",
+    "install-all": "npm-run-all --serial install:*",
     "start:hash": "cd app-vue-hash && npm run serve ",
     "start:history": "cd app-vue-history && npm run serve",
     "start:main": "cd main && npm run serve",
