@@ -8,11 +8,12 @@
         <span @click="goToPage('/about')">parent About</span>
       </p>
       <p v-if="isQiankun">
-        子项目用自己的 router-link 来跳转也可以，效果一样
-        <router-link to="/about">parent About</router-link>
+        子项目用自己的 router 来跳转也可以，效果一样
+        <router-link to="/about">router-link 方式： parent About</router-link>
+        <span @click="push('/about')">router-push 方式： parent About</span>
       </p>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -21,15 +22,18 @@ export default {
   data() {
     return {
       isQiankun: window.__POWERED_BY_QIANKUN__,
-    }
+    };
   },
   methods: {
-    goToPage(path){
+    push(path) {
+      this.$router.push(path);
+    },
+    goToPage(path) {
       console.log(this.$root.parentRouter);
       this.$root.parentRouter.push(path);
-    }
+    },
   },
-}
+};
 </script>
 
 <style>
@@ -53,7 +57,7 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-span{
+span {
   font-weight: bold;
   color: #2c3e50;
   cursor: pointer;
