@@ -9,23 +9,24 @@
 </template>
 
 <script>
-import { loadMicroApp } from 'qiankun';
+import { loadMicroApp } from "qiankun";
 
 export default {
   mounted() {
     loadMicroApp({
-      name: 'app-vue-hash', 
-      entry: 'http://localhost:1111', 
-      container: '#appContainer1', 
-      props: { data : { defaultPath: '/about' } }
+      name: "app-vue-hash",
+      entry: "http://localhost:1111",
+      container: "#appContainer1",
+      props: { data: { defaultPath: "/about" } },
     });
     loadMicroApp({
-      name: 'app-vue-hash', 
-      entry: 'http://localhost:2222', 
-      container: '#appContainer2', 
-    })
+      name: "app-vue-history",
+      entry: "http://localhost:2222",
+      container: "#appContainer2",
+      props: { data: { defaultPath: "/" } },
+    });
   },
-}
+};
 </script>
 
 <style scoped>

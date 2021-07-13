@@ -1,27 +1,31 @@
-
-import './public-path';
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import App from './App.vue';
-import routes from './router';
-import store from './store';
+import "./public-path";
+import Vue from "vue";
+import VueRouter from "vue-router";
+import App from "./App.vue";
+import routes from "./router";
+import store from "./store";
 
 Vue.config.productionTip = false;
 
 let router = null;
 let instance = null;
 
-function render({ container } = {}) {
+function render({ data = {}, container } = {}) {
   router = new VueRouter({
-    mode: 'abstract',
+    mode: "abstract",
     routes,
   });
 
   instance = new Vue({
     router,
     store,
-    render: h => h(App),
-  }).$mount(container ? container.querySelector('#appVueHistory') : '#appVueHistory');
+    render: (h) => h(App),
+  }).$mount(
+    container ? container.querySelector("#appVueHistory") : "#appVueHistory"
+  );
+  if (data?.defaultPath) {
+    router.push(data.defaultPath);
+  }
 }
 
 if (!window.__POWERED_BY_QIANKUN__) {
@@ -29,11 +33,11 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('vue app bootstraped');
+  console.log("vue app bootstraped");
 }
 
 export async function mount(props) {
-  console.log('props from main framework', props);
+  console.log("props from main framework", props);
   render(props);
 }
 
