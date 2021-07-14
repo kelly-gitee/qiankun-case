@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/app-vue-hash/">Home</router-link> |
-      <router-link to="/app-vue-hash/about">About</router-link>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
       <p v-if="isQiankun">
         主项目把router传给子项目，子项目用这个router来跳转
         <span @click="goToPage('/about')">parent About</span>

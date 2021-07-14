@@ -29,5 +29,5 @@ registerMicroApps([
   },
 ]);
 
-// setDefaultMountApp("/#/app-vue-hash");
+setDefaultMountApp("/#/app-vue-hash");
 start();
