@@ -12,7 +12,6 @@
     "start:history": "cd app-vue-history && npm run serve",
     "start:main": "cd main && npm run serve",
     "start-all": "npm-run-all --parallel start:*",
-    "serve-all": "npm-run-all --parallel start:*",
     "build:hash": "cd app-vue-hash && npm run build",
     "build:history": "cd app-vue-history && npm run build",
     "build:main": "cd main && npm run build",
