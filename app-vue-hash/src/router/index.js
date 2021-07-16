@@ -1,27 +1,27 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import RouterView from "../components/RouterView.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Home.vue';
+import RouterView from '../components/RouterView.vue';
 
 Vue.use(VueRouter);
 
-let prefix = "";
+let prefix = '';
 
 // 判断是 qiankun 环境则增加路由前缀
 if (window.__POWERED_BY_QIANKUN__) {
-  prefix = "/app-vue-hash";
+  prefix = '/app-vue-hash';
 }
 
 const routes = [
   {
-    path: prefix + "/",
-    name: "home",
+    path: prefix + '/',
+    name: 'home',
     component: Home,
   },
   {
-    path: prefix + "/about",
-    name: "about",
-    component: () => import("../views/About.vue"),
+    path: prefix + '/about',
+    name: 'about',
+    component: () => import('../views/About.vue'),
   },
 ];
 

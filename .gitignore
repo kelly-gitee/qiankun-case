@@ -2,4 +2,6 @@ app-vue-hash/node_modules/
 app-vue-hash/dist/
 main/node_modules/
 main/dist/
+
 /node_modules
+
