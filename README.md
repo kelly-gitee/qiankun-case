@@ -1,4 +1,4 @@
-# 项目说明 qiankun-vue-demo
+# 项目说明 qiankun-case
 
 用`qiankun`来实现`vue`技术栈的前端微服务
 
@@ -18,6 +18,7 @@
 
 
 ## 分支介绍
+
 
 - `master` 分支： `qiankun` 的常规基础用法
 - `feature/keep-alive` 分支 ：使用 `loadMicroApp` 来实现 `keep-alive` 的tab效果

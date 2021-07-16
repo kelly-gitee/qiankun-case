@@ -7,6 +7,7 @@ history模式路由的子项目
 npm install
 ```
 
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve

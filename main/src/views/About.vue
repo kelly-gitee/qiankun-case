@@ -14,10 +14,10 @@ export default {
       start();
     }
   },
-}
+};
 </script>
 <style scoped>
-h1{
+h1 {
   color: green;
 }
 </style>
