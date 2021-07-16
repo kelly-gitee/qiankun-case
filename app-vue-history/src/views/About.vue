@@ -7,13 +7,13 @@
 export default {
   mounted() {
     window.a = 1;
-    console.log(window.a,'app-vue-history');
+    console.log(window.a, 'app-vue-history');
   },
-}
+};
 </script>
 <style>
 /* 测试全局css污染 */
-h1{
+h1 {
   color: red;
 }
 </style>

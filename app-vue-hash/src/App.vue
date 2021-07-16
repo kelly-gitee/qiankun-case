@@ -10,7 +10,7 @@
         <span @click="goToPage('/app-vue-history/about')">app-vue-history About</span>
       </p>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -19,15 +19,15 @@ export default {
   data() {
     return {
       isQiankun: window.__POWERED_BY_QIANKUN__,
-    }
+    };
   },
   methods: {
-    goToPage(path){
+    goToPage(path) {
       console.log(this.$root.parentRouter);
       this.$root.parentRouter.push(path);
-    }
+    },
   },
-}
+};
 </script>
 
 <style>
@@ -51,7 +51,7 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-span{
+span {
   font-weight: bold;
   color: #2c3e50;
   cursor: pointer;
