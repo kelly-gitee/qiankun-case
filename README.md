@@ -1,4 +1,4 @@
-# 项目说明 qiankun-vue-demo
+# 项目说明 qiankun-case
 
 用`qiankun`来实现`vue`技术栈的前端微服务
 
