@@ -4,9 +4,7 @@
       <router-link to="/app-vue-hash/">app-vue-hash</router-link>
       <router-link to="/app-vue-history/">app-vue-history</router-link>
       <router-link to="/about">about</router-link>
-      <span class="btn" @click="changeParentState"
-        >主项目的数据：{{ commonData.parent }}点击变回1</span
-      >
+      <span class="btn" @click="changeParentState">主项目的数据：{{ commonData.parent }}点击变回1</span>
     </header>
     <div id="appContainer"></div>
     <router-view></router-view>
@@ -22,8 +20,8 @@ export default {
   },
   methods: {
     changeParentState() {
-      this.$store.commit("setCommonData", { parent: 1 });
-      console.log(this.$store.state, "主应用 -- common state");
+      this.$store.commit('setCommonData', { parent: 1 });
+      console.log(this.$store.state, '主应用 -- common state');
     },
   },
 };
