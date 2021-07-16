@@ -8,7 +8,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import { registerMicroApps, start, loadMicroApp } from 'qiankun';
+import { registerMicroApps, start, loadMicroApp, setDefaultMountApp } from 'qiankun';
 
 Vue.config.productionTip = false;
 
@@ -27,14 +27,15 @@ registerMicroApps([
     activeRule: '/app-vue-hash',
     props: { data: { store, router, loadMicroApp, commonComponents } },
   },
-  // {
-  //   name: 'app-vue-history',
-  //   entry: 'http://localhost:2222',
-  //   container: '#appContainer',
-  //   activeRule: '/app-vue-history',
-  //   props: { data : store }
-  // },
+  {
+    name: 'app-vue-history',
+    entry: 'http://localhost:2222',
+    container: '#appContainer',
+    activeRule: '/app-vue-history',
+    props: { data: store },
+  },
 ]);
 
 // 共享组件必须开启多实例
+setDefaultMountApp('app-vue-hash');
 start({ singular: false });
