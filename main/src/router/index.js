@@ -5,6 +5,11 @@ Vue.use(VueRouter);
 
 const routes = [
   {
+    path: '/',
+    name: 'app-vue-hash',
+    redirect: '/about/app-vue-hash',
+  },
+  {
     path: '/about/*',
     name: 'About',
     component: () => import('../views/About.vue'),
