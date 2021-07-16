@@ -15,28 +15,28 @@
 <script>
 export default {
   computed: {
-    commonData(){
+    commonData() {
       return this.$store.state.commonData;
-    }
+    },
   },
   methods: {
-    changeParentState(){
-      this.$store.commit('setCommonData',{ parent: 1 });
-    }
+    changeParentState() {
+      this.$store.commit('setCommonData', { parent: 1 });
+    },
   },
-}
+};
 </script>
 
 <style scoped>
-#app{
+#app {
   height: 100vh;
   text-align: center;
   position: relative;
 }
-header>a{
+header > a {
   margin: 0 20px;
 }
-.appContainer{
+.appContainer {
   background: #ccc;
   padding: 20px;
 }

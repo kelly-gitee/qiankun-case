@@ -1,4 +1,4 @@
-# 项目说明 qiankun-vue-demo
+# 项目说明 qiankun-case
 
 用`qiankun`来实现`vue`技术栈的前端微服务
 
@@ -13,8 +13,10 @@
 在根目录下：
 
 先安装依赖： `npm install`，再执行`npm run install-all`为所有项目安装依赖，最后执行`npm run start-all`即可启动所有的项目。
+如果报错可更新 app-vue-hash 里面的 vue && vue-template-compiler ==> npm update vue vue-template-compiler
 
 `npm run build-all`可以打包所有`vue`项目，`jQuery`项目不需要打包。
+
 
 
 ## 分支介绍
