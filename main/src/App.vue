@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <router-link to="/app-vue-hash/">app-vue-hash</router-link>
-      <router-link to="/app-vue-history/">app-vue-history</router-link>
+      <router-link to="/app-vue-hash">app-vue-hash</router-link>
+      <router-link to="/app-vue-history">app-vue-history</router-link>
+      <router-link to="/app-react">app-react</router-link>
       <router-link to="/about">about</router-link>
       <span class="btn" @click="changeParentState">主项目的数据：{{ commonData.parent }}点击变回1</span>
     </header>
@@ -29,7 +30,6 @@ export default {
 
 <style scoped>
 #app {
-  height: 100vh;
   text-align: center;
   position: relative;
 }

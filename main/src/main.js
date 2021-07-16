@@ -8,7 +8,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import { registerMicroApps, start, setDefaultMountApp } from 'qiankun';
+import { registerMicroApps, start, setDefaultMountApp, initGlobalState } from 'qiankun';
 
 Vue.config.productionTip = false;
 
@@ -18,21 +18,60 @@ new Vue({
   render: (h) => h(App),
 }).$mount('#app');
 
-registerMicroApps([
+registerMicroApps(
+  [
+    {
+      name: 'app-vue-hash',
+      entry: 'http://localhost:1111',
+      container: '#appContainer',
+      activeRule: '/app-vue-hash',
+      props: { data: { store, router } },
+    },
+    {
+      name: 'app-vue-history',
+      entry: 'http://localhost:2222',
+      container: '#appContainer',
+      activeRule: '/app-vue-history',
+      props: { data: store },
+    },
+    {
+      name: 'app-react',
+      entry: 'http://localhost:3333',
+      container: '#appContainer',
+      activeRule: '/app-react',
+    },
+  ],
   {
-    name: 'app-vue-hash',
-    entry: 'http://localhost:1111',
-    container: '#appContainer',
-    activeRule: '/app-vue-hash',
-    props: { data: { store, router } },
+    beforeLoad: [
+      (app) => {
+        console.log('[LifeCycle] before load %c%s', 'color: green;', app.name);
+      },
+    ],
+    beforeMount: [
+      (app) => {
+        console.log('[LifeCycle] before mount %c%s', 'color: green;', app.name);
+      },
+    ],
+    afterUnmount: [
+      (app) => {
+        console.log('[LifeCycle] after unmount %c%s', 'color: green;', app.name);
+      },
+    ],
   },
-  {
-    name: 'app-vue-history',
-    entry: 'http://localhost:2222',
-    container: '#appContainer',
-    activeRule: '/app-vue-history',
-    props: { data: store },
+);
+
+const { onGlobalStateChange, setGlobalState } = initGlobalState({
+  user: 'qiankun',
+});
+
+onGlobalStateChange((value, prev) => console.log('[onGlobalStateChange - main]:', value, prev));
+
+setGlobalState({
+  ignore: 'main',
+  user: {
+    name: 'main',
   },
-]);
+});
+
 setDefaultMountApp('/app-vue-hash');
 start();
