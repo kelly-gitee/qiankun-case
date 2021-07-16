@@ -8,7 +8,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import { registerMicroApps, start } from 'qiankun';
+import { registerMicroApps, start, setDefaultMountApp } from 'qiankun';
 import HelloWorld from './components/HelloWorld.vue';
 window.HelloWorld = HelloWorld;
 
@@ -37,4 +37,5 @@ registerMicroApps([
   },
 ]);
 
+setDefaultMountApp('app-vue-hash');
 start();

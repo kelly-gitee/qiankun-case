@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <span v-if="isQiankun" @click="changeParentState">主项目的数据：{{ commonData.parent }},点击变为2</span>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld msg="父应用的组件" />
   </div>
 </template>
 
