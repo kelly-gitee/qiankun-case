@@ -2,6 +2,7 @@ app-vue-hash/node_modules/
 app-vue-hash/dist/
 app-vue-history/node_modules/
 app-vue-history/dist/
+main-react/node_modules/
 main/node_modules/
 main/dist/
 /node_modules

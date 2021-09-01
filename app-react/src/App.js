@@ -1,9 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter
+        basename={window.__POWERED_BY_QIANKUN__ ? "/app-react" : "/"}
+      />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
