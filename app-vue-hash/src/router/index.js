@@ -4,14 +4,21 @@ import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
+let prefix = '';
+
+// 判断是 qiankun 环境则增加路由前缀
+if (window.__POWERED_BY_QIANKUN__) {
+  prefix = '/about/app-vue-hash';
+}
+
 const routes = [
   {
-    path: '/',
+    path: prefix + '/',
     name: 'Home',
     component: Home,
   },
   {
-    path: '/about',
+    path: prefix + '/about',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
