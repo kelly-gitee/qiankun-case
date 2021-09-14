@@ -25,10 +25,10 @@ function render({ data = {}, container } = {}) {
     },
     render: (h) => h(App),
   }).$mount(container ? container.querySelector('#appVueHash') : '#appVueHash');
-  // 判断 qiankun 环境则进行路由拦截，判断跳转路由是否有 /app-vue-hash 开头前缀，没有则加上
+  // 判断 qiankun 环境则进行路由拦截，判断跳转路由是否有 /about/app-vue-hash 开头前缀，没有则加上
   if (window.__POWERED_BY_QIANKUN__) {
     router.beforeEach((to, from, next) => {
-      console.log(from);
+      console.log(to, from);
       if (!to.path.includes('/about/app-vue-hash')) {
         next({
           path: '/about/app-vue-hash' + to.path,

@@ -6,11 +6,12 @@
 </template>
 
 <script>
-import { start } from 'qiankun';
+import { start, setDefaultMountApp } from 'qiankun';
 export default {
   mounted() {
     if (!window.qiankunStarted) {
       window.qiankunStarted = true;
+      setDefaultMountApp('#/about/app-vue-hash');
       start();
     }
   },
