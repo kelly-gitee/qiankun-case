@@ -42,14 +42,14 @@ function render({ data = {}, container } = {}) {
 if (!window.__POWERED_BY_QIANKUN__) {
   render();
 }
-//测试全局变量污染
-console.log('window.a', window.a);
 
 export async function bootstrap() {
   console.log('vue app bootstraped');
 }
 
 export async function mount(props) {
+  //测试全局变量污染
+  console.log('app-vue-hash-window.a', window.a);
   console.log('props from main framework', props);
   render(props);
 }

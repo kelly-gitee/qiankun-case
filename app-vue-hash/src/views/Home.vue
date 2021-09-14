@@ -26,7 +26,7 @@ export default {
     changeParentState() {
       if (this.isQiankun) {
         this.$root.parentVuex.commit('setCommonData', { parent: 2 });
-        console.log(this.$root.parentVuex.state, '主应用--common state');
+        console.log(this.$root.parentVuex, '主应用--common state');
       }
     },
   },

@@ -34,6 +34,7 @@ export async function bootstrap() {
 }
 
 export async function mount(props) {
+  console.log('app-vue-history-window.a', window.a);
   console.log('props from main framework', props);
   render(props);
   // 测试一下 body 的事件，不会被沙箱移除
